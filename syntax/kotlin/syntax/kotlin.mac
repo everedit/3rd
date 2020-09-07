@@ -1,0 +1,26 @@
+'*******************************************************************************
+' EverEdit Syntax File
+' Language:     Kotlin
+'*******************************************************************************
+
+Include( ".\const.mac" )
+Set p=CreateParser()
+
+p.AddRegion( p.CreateRegion(COLOR_COMMENT1, "//", "$", False ) )
+p.AddRegion( p.CreateRegion(COLOR_COMMENT2, "+/*+", "+*/+", False ) )
+
+p.AddRegion( p.CreateStringRegion( COLOR_STRING1, "'", "`", False ) )
+p.AddRegion( p.CreateStringRegion( COLOR_STRING2, """", "`", False ) )
+
+p.AddWord( p.CreateWord(COLOR_WORD1, "as break class continue do else false for fun if in interface is null object package return super this throw true try typealias val var when while",True) )
+p.AddWord( p.CreateWord(COLOR_WORD2, "by catch constructor delegate dynamic field file finally get import init param property receiver set setparam where",True) )
+p.AddWord( p.CreateWord(COLOR_WORD3, "actual abstract annotation companionconst crossinline data enum expect external finalinfixinlineinnerinternallateinitnoinlineopenoperatoroutoverrideprivateprotectedpublicreified sealed suspend tailrecvararg",True) )
+p.AddWord( p.CreateWord(COLOR_WORD3, "Annotation Any Array AssertionError Boolean BooleanArray Byte ByteArray Char CharArray CharSequence ClassCastException Comparable Comparator ConcurrentModificationException DeprecationLevel Double DoubleArray Enum Error Exception Float FloatArray Function IllegalArgumentException IllegalStateException IndexOutOfBoundsException Int IntArray KotlinVersion Lazy LazyThreadSafetyMode Long LongArray NoSuchElementException NoWhenBranchMatchedException Nothing NullPointerException Number NumberFormatException Pair RuntimeException Short ShortArray String Throwable Triple UninitializedPropertyAccessException Unit UnsupportedOperationException",True) )
+
+p.AddItem( p.CreateItem(COLOR_NUMBER, "\b\d+\b", False) )
+p.AddItem( p.CreateItem(COLOR_VAR, "<\w+>", False) )
+
+p.FoldText "\{", False, "\}", False
+p.SetPairs( "[]''""{}()" )
+p.CommentLine( "// " )
+p.CommentBlock "/*", "*/"
