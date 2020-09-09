@@ -1,0 +1,1184 @@
+#title=Bootstrap4代码
+#t=外部引用文件
+#g=b4-$
+<link rel="stylesheet" href="${1://cdn.phpok.com/bootstrap/4.5.0/css/bootstrap.min.css?response-content-type=text/css}" />
+<script src="${2://cdn.phpok.com/jquery/3.3.1/jquery.min.js?response-content-type=application/x-javascript}"></script>
+<script src="${3://cdn.phpok.com/popper-core/1.14.7/umd/popper.min.js?response-content-type=application/x-javascript}"></script>
+<script src="${4://cdn.phpok.com/bootstrap/4.5.0/js/bootstrap.min.js?response-content-type=application/x-javascript}"></script>
+#t=警告框-自定义内容
+#g=b4-alert-additional-content
+<div class="alert $1 alert-dismissible" role="alert">
+	<h4 class="alert-heading">$2</h4>
+	$3
+</div>
+#t=警告框-关闭图标
+#g=b4-alert-close-button
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	<span aria-hidden="true">&times;</span>
+</button>
+#t=警告框-颜色样式
+#g=b4-alert-style
+alert-${1:primary,secondary,success,danger,warning,info,light,dark}
+#t=警告框-脚本-外部关闭
+#g=b4-alert-js-close
+<input type="button" value="关闭" onclick="$('[role=alert]').alert('close')" />
+#t=警告框-脚本-关闭后执行
+#g=b4-alert-closed-tip
+$("${1:.alert}").on('closed.bs.alert',function(){
+	//关闭后执行脚本
+});
+#t=警告框-脚本-关闭前执行
+#g=b4-alert-close-tip
+$("${1:.alert}").on('close.bs.alert',function(){
+	//关闭前执行脚本
+});
+#t=徽章-代码
+#g=b4-badge
+<span class="badge badge-${2:info}">$1</span>
+#t=徽章-链接
+#g=b4-badge-link
+<a href="$3" class="badge badge-${2:info}">$1</a>
+#t=徽章-椭圆型
+#g=b4-badge-pill
+<span class="badge badge-pill badge-${2:info}">$1</span>
+#t=按钮组
+#g=b4-btn-group
+<div class="btn-group" role="group" aria-label="$2">
+	<button type="button" class="btn btn-${1:primary,secondary,success,danger,warning,info,light,dark,link}">$3</button>
+	<button type="button" class="btn btn-${1:primary,secondary,success,danger,warning,info,light,dark,link}">$4</button>
+	<button type="button" class="btn btn-${1:primary,secondary,success,danger,warning,info,light,dark,link}">$5</button>
+</div>
+#t=按钮组-横排下拉
+#g=b4-btn-group-dropdown
+<div class="btn-group" role="group" aria-label="$1">
+	<button type="button" class="btn btn-secondary">$2</button>
+	<button type="button" class="btn btn-secondary">$3</button>
+	<div class="btn-group" role="group">
+		<button id="${5:dropdownId}" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">$4</button>
+		<div class="dropdown-menu" aria-labelledby="${5:dropdownId}">
+			<a class="dropdown-item" href="$7">$6</a>
+			<a class="dropdown-item" href="$9">$8</a>
+		</div>
+	</div>
+</div>
+#t=按钮组-竖排下拉
+#g=b4-btn-group-dropdown-vertical
+<div class="btn-group-vertical" role="group" aria-label="$1">
+	<button type="button" class="btn btn-secondary">$2</button>
+	<button type="button" class="btn btn-secondary">$3</button>
+	<div class="btn-group" role="group">
+		<button id="${5:dropdownId}" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">$4</button>
+		<div class="dropdown-menu" aria-labelledby="${5:dropdownId}">
+			<a class="dropdown-item" href="$7">$6</a>
+			<a class="dropdown-item" href="$9">$8</a>
+		</div>
+	</div>
+</div>
+#t=按钮组-自定义大小
+#g=b4-bgroup-size
+<div class="btn-group btn-group-${1:lg,sm,xs}" role="group" aria-label="$2">
+	${3:这里插入按钮}
+</div>$0
+#t=按钮组-工具条
+#g=b4-btn-group-toolbar
+<div class="btn-toolbar" role="toolbar" aria-label="$1">
+	<div class="btn-group" role="group" aria-label="$2">
+		<button type="button" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link}">$4</button>
+		<button type="button" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link}">$5</button>
+		<button type="button" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link}">$6</button>
+	</div>
+	<div class="btn-group" role="group" aria-label="$7">
+		<button type="button" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link}">$8</button>
+		<button type="button" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link}">$9</button>
+	</div>
+</div>
+#t=面包屑导航-默认
+#g=b4-breadcrumb-default
+<nav class="breadcrumb">
+	<a class="breadcrumb-item" href="$2">$1</a>
+	<a class="breadcrumb-item" href="$4">$3</a>
+	<span class="breadcrumb-item active">$5</span>
+</nav>
+#t=面包屑导航-列表
+#g=b4-breadcrumb-list
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a href="$2">$1</a></li>
+	<li class="breadcrumb-item"><a href="$4">$3</a></li>
+	<li class="breadcrumb-item active">$5</li>
+</ol>
+#t=按钮-链接
+#g=b4-button-a
+<a name="$4" id="$4" class="btn btn-info" href="${2:#}" role="button">$1</a>
+#t=按钮-链接-禁用
+#g=b4-button-disabled-a
+<a href="${2:#}" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link} ${4:active,disabled}" role="button">$1</a>$0
+#t=按钮-块模式
+#g=b4-button-block
+<button type="button" name="$3" id="$3" class="btn btn-info btn-lg btn-block">$1</button>$0
+#t=按钮-复选框
+#g=b4-button-checkbox
+<div class="btn-group" data-toggle="buttons">
+	<label class="btn btn-info active">
+		<input type="checkbox" name="$3" id="$3" checked autocomplete="off">$2
+	</label>
+	<label class="btn btn-info">
+		<input type="checkbox" name="$5" id="$5" autocomplete="off">$4
+	</label>
+	<label class="btn btn-info">
+		<input type="checkbox" name="$7" id="$7" autocomplete="off">$6
+	</label>
+</div>$0
+#t=按钮-默认
+#g=b4-button-default
+<button type="button" class="btn btn-${2:primary,secondary,success,danger,warning,info,light,dark,link}">$1</button>$0
+#t=按钮-Input模式
+#g=b4-button-input
+<input name="$2" id="$2" class="btn btn-${3:primary,secondary,success,danger,warning,info,light,dark,link}" type="button" value="$1" />$0
+#t=按钮-仅轮廓
+#g=b4-button-outline
+<button type="button" class="btn btn-outline-info">$1</button>
+#t=按钮-单选
+#g=b4-button-radio
+<div class="btn-group" data-toggle="buttons">
+	<label class="btn btn-light active">
+		<input type="radio" name="$3" id="$3" autocomplete="off" checked>$2
+	</label>
+	<label class="btn btn-light">
+		<input type="radio" name="$5" id="$5" autocomplete="off">$4
+	</label>
+	<label class="btn btn-light">
+		<input type="radio" name="$7" id="$7" autocomplete="off ">$6
+	</label>
+</div>$0
+#t=卡片-布局
+#g=b4-card
+<div class="card">
+	<div class="card-header">
+		Featured
+	</div>
+	<div class="card-body">
+		<h4 class="card-title">${4:Title}</h4>
+		<p class="card-text">${5:Body}</p>
+	</div>
+	<div class="card-footer">
+	</div>
+</div>$0
+#t=卡片-图片（放在 card-body 之前）
+#g=b4-card-img
+<img class="card-img-top" src="$1" alt="$2" />$0
+#t=卡片-引用
+#g=b4-card-blockquote
+<div class="card">
+  <div class="card-body">
+    <blockquote class="blockquote">
+      <p>${1:引用}</p>
+      <footer class="card-blockquote">${2:页脚1}<cite title="${3:来源}">${3:来源}</cite></footer>
+    </blockquote>
+  </div>
+</div>$0
+#t=卡片-内容带链接
+#g=b4-card-links
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">${3:Title}</h4>
+		<p class="card-text">${4:Text}</p>
+	</div>
+	<div class="card-body">
+		<a href="$6" class="card-link">${5:Card link}</a>
+		<a href="$8" class="card-link">${7:Another link}</a>
+	</div>
+</div>$0
+#t=卡列-列表
+#g=b4-card-list
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">${3:Title}</h4>
+		<p class="card-text">${4:Text}</p>
+	</div>
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">${5:Item 1}</li>
+		<li class="list-group-item">${6:Item 2}</li>
+		<li class="list-group-item">${7:Item 3}</li>
+	</ul>
+</div>$0
+#t=卡片-带背景图片
+#g=b4-card-overlay
+<div class="card bg-dark text-white">
+	<img class="card-img" src="$1" alt="$2">
+	<div class="card-img-overlay">
+		<h4 class="card-title">${3:Title}</h4>
+		<p class="card-text">${4:Text}</p>
+	</div>
+</div>$0
+#t=卡片-导航模式
+#g=b4-card-tab-head
+<div class="card text-center">
+	<div class="card-header">
+		<ul class="nav nav-tabs card-header-tabs">
+			<li class="nav-item">
+				<a class="nav-link active" href="${2:#}">${1:Active tab}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${4:#}">${3:Tab}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="${6:#}">${5:Disabled tab}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="card-body">
+		<h4 class="card-title">${7:Title}</h4>
+		<p class="card-text">${8:Body}</p>
+	</div>
+</div>$0
+#t=卡片-导航模式-闭合
+#g=b4-card-pill-head
+<div class="card text-center">
+	<div class="card-header">
+		<ul class="nav nav-pills card-header-pills">
+			<li class="nav-item">
+				<a class="nav-link active" href="${2:#}">${1:Active pill}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${4:#}">${3:Pill}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="${6:#}">${5:Disabled pill}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="card-body">
+		<h4 class="card-title">${7:Title}</h4>
+		<p class="card-text">${8:Body}</p>
+	</div>
+</div>$0
+#t=卡片-子标题
+#g=b4-card-subtitle
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">${1:Title}</h4>
+		<h6 class="card-subtitle text-muted">${2:Subtitle}</h6>
+	</div>
+	<div class="card-body">
+		<p class="card-text">${5:Text}</p>
+		<a href="${7:#}" class="card-link">${6:Link 1}</a>
+		<a href="${9:#}" class="card-link">${8:Link 2}</a>
+	</div>
+</div>$0
+#t=卡片组-瀑布流模式
+#g=b4-card-columns
+<div class="card-columns">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">${3:Title}</h4>
+			<p class="card-text">${4:Text}</p>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">${7:Title}</h4>
+			<p class="card-text">${8:Text}</p>
+		</div>
+	</div>
+</div>$0
+#t=卡片组-等宽高且有留白
+#g=b4-card-decks
+<div class="card-deck">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">${3:Title}</h4>
+			<p class="card-text">${4:Text}</p>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">${7:Title}</h4>
+			<p class="card-text">${8:Text}</p>
+		</div>
+	</div>
+</div>$0
+#t=卡片组-网格模式
+#g=b4-card-grid
+<div class="row">
+	<div class="col-${1:xs,sm,md,lg,xl}-${2:1-12}">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="card-title">${3:Title}</h3>
+				<p class="card-text">${4:Text}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-${5:xs,sm,md,lg,xl}-${6:1-12}">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="card-title">${7:Title}</h3>
+				<p class="card-text">${8:Text}</p>
+			</div>
+		</div>
+	</div>
+</div>$0
+#t=卡片组-等宽高且无留白
+#g=b4-card-groups
+<div class="card-group">
+	<div class="card">
+		<img class="card-img-top" data-src="${1:holder.js/100x180/}" alt="${2:Card image cap}">
+		<div class="card-body">
+			<h4 class="card-title">${3:Title}</h4>
+			<p class="card-text">${4:Text}</p>
+		</div>
+	</div>
+	<div class="card">
+		<img class="card-img-top" data-src="${5:holder.js/100x180/}" alt="${6:Card image cap}">
+		<div class="card-body">
+			<h4 class="card-title">${7:Title}</h4>
+			<p class="card-text">${8:Text}</p>
+		</div>
+	</div>
+</div>$0
+#t=轮播-含标题
+#g=b4-carousel-caption
+<div id="${1:carouselId}" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#${1:carouselId}" data-slide-to="0" class="active"></li>
+		<li data-target="#${1:carouselId}" data-slide-to="1"></li>
+		<li data-target="#${1:carouselId}" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<div class="carousel-item active">
+			<img src="$2" alt="$3">
+			<div class="carousel-caption d-none d-md-block">
+				<h3>${4:Title}</h3>
+				<p>${5:Description}</p>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img data-src="$6" alt="$7">
+			<div class="carousel-caption d-none d-md-block">
+				<h3>${8:Title}</h3>
+				<p>${9:Description}</p>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img data-src="$10" alt="$11">
+			<div class="carousel-caption d-none d-md-block">
+				<h3>${12:Title}</h3>
+				<p>${13:Description}</p>
+			</div>
+		</div>
+	</div>
+	<a class="carousel-control-prev" href="#${1:carouselId}" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#${1:carouselId}" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>$0
+#t=轮播-默认
+#g=b4-carousel-default
+<div id="${1:carouselId}" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#${1:carouselId}" data-slide-to="0" class="active"></li>
+		<li data-target="#${1:carouselId}" data-slide-to="1"></li>
+		<li data-target="#${1:carouselId}" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<div class="carousel-item active">
+			<img data-src="$2" alt="$3">
+		</div>
+		<div class="carousel-item">
+			<img data-src="$4" alt="$5">
+		</div>
+		<div class="carousel-item">
+			<img data-src="$6" alt="$7">
+		</div>
+	</div>
+	<a class="carousel-control-prev" href="#${1:carouselId}" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#${1:carouselId}" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>$0
+#t=折叠-手风琴
+#g=b4-collapse-accordion
+<div id="${1:accordianId}" role="tablist" aria-multiselectable="true">
+	<div class="card">
+		<div class="card-header" role="tab" id="${3:section1HeaderId}">
+			<h5 class="mb-0">
+				<a data-toggle="collapse" data-parent="#${1:accordianId}" href="#${5:section1ContentId}" aria-expanded="true" aria-controls="${5:section1ContentId}">${2:Section 1}</a>
+			</h5>
+		</div>
+		<div id="${5:section1ContentId}" class="collapse in" role="tabpanel" aria-labelledby="${3:section1HeaderId}">
+			<div class="card-body">
+				${4:Section 1 content}
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab" id="${7:section2HeaderId}">
+			<h5 class="mb-0">
+				<a data-toggle="collapse" data-parent="#${1:accordianId}" href="#${9:section2ContentId}" aria-expanded="true" aria-controls="${9:section2ContentId}">${6:Section 2}</a>
+			</h5>
+		</div>
+		<div id="${9:section2ContentId}" class="collapse in" role="tabpanel" aria-labelledby="${7:section2HeaderId}">
+			<div class="card-body">
+				${8:Section 2 content}
+			</div>
+		</div>
+	</div>
+</div>$0
+#t=折叠-按钮
+#g=b4-collapse-button
+<p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#${2:contentId}" aria-expanded="false" aria-controls="${2:contentId}">${1:Show}</button></p>
+<div class="collapse" id="${2:contentId}">$3</div>$0
+#t=折叠-默认
+#g=b4-collapse-default
+<p><a class="btn btn-primary" data-toggle="collapse" href="#${2:contentId}" aria-expanded="false" aria-controls="${2:contentId}">${1:Show}</a></p>
+<div class="collapse" id="${2:contentId}">$3</div>$0
+#t=折叠-脚本-显示前事件
+#g=b4-collapse-show-start
+$('#myCollapsible').on('show.bs.collapse', function () {
+	//执行的事件
+})
+#t=折叠-脚本-显示后事件
+#g=b4-collapse-show-end
+$('#myCollapsible').on('shown.bs.collapse', function () {
+	//执行的事件
+})
+#t=折叠-脚本-隐藏前事件
+#g=b4-collapse-show-start
+$('#myCollapsible').on('hide.bs.collapse', function () {
+	//执行的事件
+})
+#t=折叠-脚本-隐藏后事件
+#g=b4-collapse-show-end
+$('#myCollapsible').on('hidden.bs.collapse', function () {
+	//执行的事件
+})
+#t=下拉菜单-右对齐
+#g=b4-dropdown-alignment
+<div class="btn-group">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="${2:triggerId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${1:This dropdown's menu is right-aligned}</button>
+	<div class="dropdown-menu dropdown-menu-right" aria-labelledby="${2:triggerId}">
+		<a class="dropdown-item" href="${4:#}">${3:Action}</a>
+		<a class="dropdown-item disabled" href="${6:#}">${5:Disabled action}</a>
+		<h6 class="dropdown-header">${7:Section header}</h6>
+		<a class="dropdown-item" href="${9:#}">${8:Action}</a>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="${11:#}">${10:After divider action}</a>
+	</div>
+</div>$0
+#t=下拉菜单-锚点
+#g=b4-dropdown-anchor
+<div class="dropdown open">
+	<a class="btn btn-secondary dropdown-toggle" type="button" id="${2:triggerId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${1:Dropdown}</button>
+	<div class="dropdown-menu" aria-labelledby="${2:triggerId}">
+		<a class="dropdown-item" href="${4:#}">${3:Action}</a>
+		<a class="dropdown-item disabled" href="${6:#}">${5:Disabled action}</a>
+	</div>
+</div>$0
+#t=下拉菜单-按钮-默认打开
+#g=b4-dropdown-button
+<div class="dropdown open">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="${2:triggerId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${1:Dropdown}</button>
+	<div class="dropdown-menu" aria-labelledby="${2:triggerId}">
+		<button class="dropdown-item" href="${4:#}">${3:Action}</button>
+		<button class="dropdown-item disabled" href="${6:#}">${5:Disabled action}</button>
+	</div>
+</div>$0
+#t=下拉菜单-默认
+#g=b4-dropdown-default
+<div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="${2:triggerId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${1:Dropdown}</button>
+	<div class="dropdown-menu" aria-labelledby="${2:triggerId}">
+		<a class="dropdown-item" href="${4:#}">${3:Action}</a>
+		<a class="dropdown-item disabled" href="${6:#}">${5:Disabled action}</a>
+		<h6 class="dropdown-header">${7:Section header}</h6>
+		<a class="dropdown-item" href="${9:#}">${8:Action}</a>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="${11:#}">${10:After divider action}</a>
+	</div>
+</div>$0
+#t=下拉菜单-按钮组
+#g=b4-dropdown-split
+<div class="btn-group">
+	<button type="button" class="btn btn-secondary">${1:Split dropdown}</button>
+	<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+	<div class="dropdown-menu">
+		<a class="dropdown-item" href="${3:#}">${2:Action}</a>
+		<a class="dropdown-item disabled" href="${5:#}">${4:Disabled action}</a>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="${7:#}">${6:Separated link}</a>
+	</div>
+</div>$0
+#t=上拉菜单
+#g=b4-dropdown-up
+<div class="dropup">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="${2:triggerId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${1:Dropdown}</button>
+	<div class="dropdown-menu" aria-labelledby="${2:triggerId}">
+		<a class="dropdown-item" href="${4:#}">${3:Action}</a>
+		<a class="dropdown-item disabled" href="${6:#}">${5:Disabled action}</a>
+		<h6 class="dropdown-header">${7:Section header}</h6>
+		<a class="dropdown-item" href="${9:#}">${8:Action}</a>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="${11:#}">${10:After divider action}</a>
+	</div>
+</div>$0
+#t=上拉菜单-按钮组
+#g=b4-dropdown-up-split
+<div class="btn-group dropup">
+  <button type="button" class="btn btn-secondary">${1:Split dropup}</button>
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="${3:#}">${2:Action}</a>
+		<a class="dropdown-item disabled" href="${5:#}">${4:Disabled action}</a>
+		<h6 class="dropdown-header">${6:Section header}</h6>
+		<a class="dropdown-item" href="${8:#}">${7:Action}</a>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="${10:#}">${9:After divider action}</a>
+	</div>
+</div>$0
+#t=图片-含内容标注
+#g=b4-figure-default
+<figure class="figure">
+	<img src="$1" class="figure-img img-fluid rounded" alt="$2">
+	<figcaption class="figure-caption ${4:text-xs-right}">$3</figcaption>
+</figure>$0
+#t=图片-满屏模式
+#g=b4-image-default
+<img src="$1" class="img-fluid rounded" alt="$4" />$0
+#t=图片-缩略图
+#g=b4-image-default
+<img src="$1" class="img-thumbnail rounded" alt="$4" />$0
+#t=表单-复选框
+#g=b4-form-checkbox
+<div class="form-check">
+	<label class="form-check-label">
+		<input type="checkbox" class="form-check-input" name="$2" id="$2" value="$3" ${4:checked}>
+		${1:文本内容}
+	</label>
+</div>$0
+#t=表单-复选框（同级并列）
+#g=b4-form-checkbox-inline
+<div class="form-check form-check-inline">
+	<label class="form-check-label">
+		<input class="form-check-input" type="checkbox" name="$2" id="$2" value="${3:checkedValue}"> ${1:Display value}
+	</label>
+</div>$0
+#t=表单-邮件
+#g=b4-form-email
+<div class="form-group">
+	<label for="$3">$1</label>
+	<input type="email" class="form-control" name="$3" id="$3" aria-describedby="${4:emailHelpId}" placeholder="$2">
+	<small id="${4:emailHelpId}" class="form-text text-muted">${5:Help text}</small>
+</div>$0
+#t=表单-文件上传
+#g=b4-form-file
+<div class="form-group">
+  <label for="$3">$1</label>
+  <input type="file" class="form-control-file" name="$3" id="$3" placeholder="$2" aria-describedby="${4:fileHelpId}">
+  <small id="${4:fileHelpId}" class="form-text text-muted">${5:Help text}</small>
+</div>$0
+#t=表单-文件上传-自定义样式
+#g=b4-form-file-custom
+<div class="form-group">
+  <label class="custom-file">
+    <input type="file" name="$2" id="$2" placeholder="$1" class="custom-file-input" aria-describedby="${3:fileHelpId}">
+    <span class="custom-file-control"></span>
+  </label>
+  <small id="${3:fileHelpId}" class="form-text text-muted">${4:Help text}</small>
+</div>$0
+#t=表单-网格栏
+#g=b4-form-grid
+<div class="container">
+	<form method="post" class="" id="post_save" onsubmit="return false">
+	<div class="form-group row">
+		<label for="${1:inputName}" class="col-sm-4 col-form-label">$1</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="${1:inputName}" id="${1:inputName}" placeholder="$2">
+		</div>
+	</div>
+	<fieldset class="form-group row">
+		<legend class="col-form-legend col-sm-4">组名称</legend>
+		<div class="col-sm-8">
+			$3
+		</div>
+	</fieldset>
+	<div class="form-group row">
+		<div class="12">
+			<button type="submit" class="btn btn-primary">提交保存</button>
+		</div>
+	</div>
+	</form>
+</div>$0
+#t=表单组
+#g=b4-form-group
+<div class="form-group">
+	<label for="$4">$1</label>
+	<input type="text" name="$4" id="$4" class="form-control" placeholder="$2" aria-describedby="${5:helpId}">
+	<small id="${5:helpId}" class="text-muted">${6:Help text}</small>
+</div>$0
+#t=表单-同级并列
+#g=b4-form-inline
+<form class="form-inline">
+	<div class="form-group">
+		<label for="$4">$1</label>
+		<input type="text" name="$4" id="$4" class="form-control" placeholder="$2" aria-describedby="${5:helpId}">
+		<small id="${5:helpId}" class="text-muted">${6:Help text}</small>
+	</div>
+</form>$0
+#t=表单-控制大小
+#g=b4-form-input-sizing
+<div class="form-group">
+	<label for="$5">$1</label>
+	<input type="text" class="form-control form-control-sm" name="$5" id="$5" aria-describedby="${6:helpId}" placeholder="$2">
+	<small id="${6:helpId}" class="form-text text-muted">${7:Help text}</small>
+</div>$0
+#t=表单-下拉单选
+#g=b4-form-select
+<div class="form-group">
+	<label for="$2">$1</label>
+	<select class="form-control" name="$2" id="$2">
+		<option>$3</option>
+		<option>$4</option>
+		<option>$5</option>
+	</select>
+</div>$0
+#t=表单-下拉多选
+#g=b4-form-multi-select
+<div class="form-group">
+	<label for="$2">$1</label>
+	<select multiple class="form-control" name="$2" id="$2">
+		<option>$3</option>
+		<option>$4</option>
+		<option>$5</option>
+	</select>
+</div>$0
+#t=表单-单选框
+#g=b4-form-radio
+<div class="form-check">
+	<label class="form-check-label">
+    <input type="radio" class="form-check-input" name="$2" id="$2" value="${3:checkedValue}" ${4:checked}>
+    ${1:Display value}
+  </label>
+</div>$0
+#t=表单-单选框（同级并列）
+#g=b4-form-radio-inline
+<div class="form-check form-check-inline">
+	<label class="form-check-label">
+		<input class="form-check-input" type="radio" name="$2" id="$2" value="${3:checkedValue}"> ${1:Display value}
+	</label>
+</div>$0
+#t=表单-文本区
+#g=b4-form-textarea
+<div class="form-group">
+	<label for="$2">$1</label>
+	<textarea class="form-control" name="$2" id="$2" rows="${3:3}"></textarea>
+</div>$0
+#t=网格-自定义列
+#g=b4-grid-col
+<div class="col-sm-4">
+	$3
+</div>$0
+#t=网格-外框
+#g=b4-grid-container
+<div class="container">
+	$1
+</div>$0
+#t=网格-自适应外框
+#g=b4-grid-container-fluid
+<div class="container-fluid">
+	$1
+</div>$0
+#t=网格-默认
+#g=b4-grid-default
+<div class="container">
+	<div class="row">
+		<div class="col">
+			$3
+		</div>
+		$4
+	</div>
+</div>$0
+#t=网格-Row
+#g=b4-grid-row
+<div class="row">
+	<div class="col">
+		$1
+	</div>
+	$2
+</div>$0
+#t=按钮组
+#g=b4-igroup-button
+<div class="input-group">
+	<span class="input-group-btn">
+		<button class="btn btn-secondary" type="button" aria-label="$2">${1:Action}</button>
+	</span>
+	<input type="text" class="form-control" name="${5:name}" id="${5:name}" placeholder="$3" aria-label="$6">
+</div>$0
+#t=按钮组-下拉菜单
+#g=b4-igroup-dropdown
+<div class="input-group">
+	<span class="input-group-btn">
+		<button type="button" class="btn btn-secondary dropdown-toggle" aria-label="$2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			${1:Dropdown}
+		</button>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="">动作</a>
+			<a class="dropdown-item disabled" href="">禁止链接</a>
+			<div role="separator" class="dropdown-divider"></div>
+			<a class="dropdown-item" href="">链接</a>
+		</div>
+	</span>
+	<input type="text" class="form-control" name="${11:name}" id="${11:name}" placeholder="$9" aria-label="$12">
+</div>$0
+#t=按钮组-前后文本
+#g=b4-igroup-text-both
+<div class="input-group">
+	<span class="input-group-addon">${1:prefix}</span>
+	<input type="text" name="${4:name}" id="${4:name}" class="form-control" placeholder="${2:placeholder}">
+	<span class="input-group-addon">${5:sufix}</span>
+</div>$0
+
+#t=巨幕-默认
+#g=b4-jumbotron-default
+<div class="jumbotron">
+	<h1 class="display-3">${1:标题}</h1>
+	<p class="lead">${2:引导说明}</p>
+	<hr class="my-2">
+	<p>${3:更多}</p>
+	<p class="lead">
+		<a class="btn btn-primary btn-lg" href="$5" role="button">${4:确定}</a>
+	</p>
+</div>$0
+#t=巨幕-全屏
+#g=b4-jumbotron-fluid
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class="display-3">${1:标题}</h1>
+		<p class="lead">${2:引导说明}</p>
+		<hr class="my-2">
+		<p>${3:更多}</p>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="$5" role="button">确定</a>
+		</p>
+	</div>
+</div>$0
+#t=列表组-仅链接
+#g=b4-list-a
+<div class="list-group">
+	<a href="${2:#}" class="list-group-item list-group-item-action active">${1:Active item}</a>
+	<a href="${4:#}" class="list-group-item list-group-item-action">${3:Item}</a>
+	<a href="${6:#}" class="list-group-item list-group-item-action disabled">${5:Disabled item}</a>
+</div>$0
+#t=列表组-含徽章
+#g=b4-list-badge
+<ul class="list-group">
+	<li class="list-group-item d-flex justify-content-between align-items-center active">
+		${1:Active list item}
+		<span class="badge badge-secondary badge-pill">${2:pill1}</span>
+	</li>
+	<li class="list-group-item d-flex justify-content-between align-items-center">
+		${3:List item}
+		<span class="badge badge-secondary badge-pill">${4:pill2}</span>
+	</li>
+	<li class="list-group-item d-flex justify-content-between align-items-center disabled">
+		${5:Disabled item}
+		<span class="badge badge-secondary badge-pill">${6:pill3}</span>
+	</li>
+</ul>$0
+#t=列表组-自定义
+#g=b4-list-custom
+<div class="list-group">
+	<a href="" class="list-group-item list-group-item-action flex-column align-items-start active">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1">${2:Heading}</h5>
+			<small>${3:small}</small>
+		</div>
+		<p class="mb-1">${4:Paragraph}</p>
+		<small>${5:paragraph footer}</small>
+	</a>
+	<a href="" class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1">${7:Heading}</h5>
+			<small>${8:small}</small>
+		</div>
+		<p class="mb-1">${9:Paragraph}</p>
+		<small>${10:paragraph footer}</small>
+	</a>
+	<a href="${11:#}" class="list-group-item list-group-item-action flex-column align-items-start disabled">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1">${12:Heading}</h5>
+			<small>${13:small}</small>
+		</div>
+		<p class="mb-1">${14:Paragraph}</p>
+		<small>${15:paragraph footer}</small>
+	</a>
+</div>$0
+#t=列表组-默认
+#g=b4-list-default
+<ul class="list-group">
+	<li class="list-group-item active">${1:Active item}</li>
+	<li class="list-group-item">${2:Item}</li>
+	<li class="list-group-item disabled">${3:Disabled item}</li>
+</ul>$0
+#t=媒体库-默认
+#g=b4-media-default
+<div class="media">
+	<a class="d-flex" href="${1:#}">
+		<img src="$2" alt="$3">
+	</a>
+	<div class="media-body">
+		<h5>${4:Media heading}</h5>
+		${5:Media text}
+	</div>
+</div>$0
+#t=媒体库-列表
+#g=b4-media-list
+<ul class="list-unstyled">
+	<li class="media">
+		<a class="d-flex" href="${1:#}">
+			<img src="$2" alt="$3">
+		</a>
+		<div class="media-body">
+			<h5>${4:Media heading}</h5>
+			${5:Media text}
+		</div>
+	</li>
+	<li class="media">
+		<a class="d-flex" href="${6:#}">
+			<img src="$7" alt="$8">
+		</a>
+		<div class="media-body">
+			<h5>${9:Media heading}</h5>
+			${10:Media text}
+		</div>
+	</li>
+	<li class="media">
+		<a class="d-flex" href="${11:#}">
+			<img src="$12" alt="$13">
+		</a>
+		<div class="media-body">
+			<h5>${14:Media heading}</h5>
+			${15:Media text}
+		</div>
+	</li>
+</ul>$0
+#t=媒体库-嵌套
+#g=b4-media-nesting
+<div class="media">
+    <a class="d-flex" href="${1:#}">
+        <img src="$2" alt="$3">
+	</a>
+    <div class="media-body">
+        <h5>${4:Media heading}</h5>
+        ${5:Media text}
+        <div class="media">
+            <a class="d-flex" href="${6:#}">
+				<img src="$7" alt="$8">
+			</a>
+            <div class="media-body">
+                <h5>${9:Media heading}</h5>
+                ${10:Media text}
+            </div>
+        </div>
+    </div>
+</div>$0
+#t=媒体库-居右
+#g=b4-media-right
+<div class="media">
+	<div class="media-body">
+		<h5>${1:Media heading}</h5>
+		${2:Media text}
+	</div>
+	<a class="d-flex" href="${3:#}">
+		<img  src="$4" alt="$5">
+	</a>
+</div>$0
+#t=导航-仅链接
+#g=b4-nav-a
+<nav class="nav ${1:justify-content-center,justify-content-end}">
+	<a class="nav-link active" href="${3:#}">${2:Active link}</a>
+	<a class="nav-link" href="${5:#}">${4:Link}</a>
+	<a class="nav-link disabled" href="#">${6:Disabled link}</a>
+</nav>$0
+#t=导航-面版切换
+#g=b4-nav-complete
+<!-- Nav tabs -->
+<ul class="nav nav-${2:tabs,pills}" id="${1:navId}">
+	<li class="nav-item">
+		<a href="#${4:tab1Id}" class="nav-link active">${3:Active}</a>
+	</li>
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">${5:Dropdown}</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="#${7:tab2Id}">${6:Action}</a>
+			<a class="dropdown-item" href="#${9:tab3Id}">${8:Another action}</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#${11:tab4Id}">${10:Action}</a>
+		</div>
+	</li>
+	<li class="nav-item">
+		<a href="#${13:tab5Id}" class="nav-link">${12:Another link}</a>
+	</li>
+	<li class="nav-item">
+		<a href="#" class="nav-link disabled">${14:Disabled}</a>
+	</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div class="tab-pane fade show active" id="${4:tab1Id}" role="tabpanel">$15</div>
+	<div class="tab-pane fade" id="${7:tab2Id}" role="tabpanel">$16</div>
+	<div class="tab-pane fade" id="${9:tab3Id}" role="tabpanel">$17</div>
+	<div class="tab-pane fade" id="${11:tab4Id}" role="tabpanel">$18</div>
+	<div class="tab-pane fade" id="${13:tab5Id}" role="tabpanel">$19</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#${1:navId} a').click(function(e){
+		e.preventDefault();
+		$(this).tab('show');
+	});
+});
+</script>$0
+#t=导航-列表模式
+#g=b4-nav-ul
+<ul class="nav ${1:justify-content-center,justify-content-end}">
+    <li class="nav-item">
+        <a class="nav-link active" href="${3:#}">${2:Active link}</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="${5:#}">${4:Link}</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">${6:Disabled link}</a>
+    </li>
+</ul>$0
+#t=导航条-默认
+#g=b4-navbar-default
+<nav class="navbar navbar-expand-${1:sm,md,lg,-xl} navbar-light bg-light">
+	<a class="navbar-brand" href="${3:#}">${2:Navbar}</a>
+	<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#${4:collapsibleNavId}" aria-controls="${4:collapsibleNavId}"
+	    aria-expanded="false" aria-label="${5:Toggle navigation}">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="${4:collapsibleNavId}">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="${7:#}">${6:Home} <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${9:#}">${8:Link}</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="${11:#}" id="${12:dropdownId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${10:Dropdown}</a>
+				<div class="dropdown-menu" aria-labelledby="${12:dropdownId}">
+					<a class="dropdown-item" href="${14:#}">${13:Action 1}</a>
+					<a class="dropdown-item" href="${16:#}">${15:Action 2}</a>
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="${17:Search}">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">${18:Search}</button>
+		</form>
+	</div>
+</nav>$0
+#t=导航条-混合模式
+#g=b4-navbar-non-responsive
+<nav class="navbar navbar-expand navbar-light bg-faded">
+    <a class="navbar-brand" href="${2:#}">${1:Navbar}</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="${4:#}">${3:Active} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="${6:#}">${5:Link}</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="${8:#}" id="${9:dropdownId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${7:Dropdown}</a>
+            <div class="dropdown-menu" aria-labelledby="${9:dropdownId}">
+                <a class="dropdown-item" href="${11:#}">${10:Action 1}</a>
+                <a class="dropdown-item" href="${13:#}">${12:Action 2}</a>
+            </div>
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="${17:Search}">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">${18:Search}</button>
+    </form>
+</nav>$0
+#t=分页-默认
+#g=b4-pagination-default
+<nav aria-label="${1:Page navigation}">
+	<ul class="pagination">
+		<li class="page-item disabled">
+			<a class="page-link" href="${3:#}" aria-label="${2:Previous}">
+				<span aria-hidden="true">&laquo;</span>
+				<span class="sr-only">${2:Previous}</span>
+			</a>
+		</li>
+		<li class="page-item active"><a class="page-link" href="${5:#}">$4</a></li>
+		<li class="page-item"><a class="page-link" href="${7:#}">$6</a></li>
+		<li class="page-item">
+			<a class="page-link" href="${9:#}" aria-label="${8:Next}">
+				<span aria-hidden="true">&raquo;</span>
+				<span class="sr-only">${8:Next}</span>
+			</a>
+		</li>
+	</ul>
+</nav>$0
+#t=进度条-自定义颜色
+#g=b4-progress-colored
+<div class="progress">
+    <div class="progress-bar bg-${5:primary,secondary,success,danger,warning,info,light,dark}" role="progressbar" style="width: ${4:25}%;" aria-valuenow="${4:25}" aria-valuemin="${2:0}" aria-valuemax="${3:100}">${1:Description}</div>
+</div>$0
+#t=进度条-默认
+#g=b4-progress-default
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: ${4:25}%;" aria-valuenow="${4:25}" aria-valuemin="${2:0}" aria-valuemax="${3:100}">${1:Description}</div>
+</div>$0
+#t=进度条-兼容IE9
+#g=b4-progress-ie9
+<div class="text-xs-center" id="${2:progressId}">${1:Description}</div>
+<progress class="progress" value="$4" max="${3:100}" aria-describedby="${2:progressId}">
+  <div class="progress">
+    <span class="progress-bar" style="width: $5%;"></span>
+  </div>
+</progress>$0
+#t=进度条-条文效果
+#g=b4-progress-striped
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-${5:primary,secondary,success,danger,warning,info,light,dark}" role="progressbar"
+        style="width: ${4:25}%;" aria-valuenow="${4:25}" aria-valuemin="${2:0}" aria-valuemax="${3:100}">${1:Description}</div>
+</div>$0
+#t=滚动监听-默认
+#g=b4-scrollspy-default
+<style type="text/css">
+.scrollspy{
+	position: relative;
+}
+</style>
+<div class="scrollspy" data-spy="scroll" data-target="#${2:navId}">
+	$4
+	<div id="${2:navId}">
+		<ul class="nav nav-tabs" role="tablist">
+			$3
+		</ul>
+	</div>
+	$5
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.scrollspy').scrollspy({
+		target: '#${2:navId}'
+	});
+});
+</script>$0
+#t=表格-默认
+#g=b4-table-default
+<table class="table">
+<thead>
+	<tr>
+		<th>$1</th>
+		<th>$2</th>
+		<th>$3</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td scope="row">$4</td>
+		<td>$5</td>
+		<td>$6</td>
+	</tr>
+	<tr>
+		<td scope="row">$7</td>
+		<td>$8</td>
+		<td>$9</td>
+	</tr>$0
+</tbody>
+</table>
+#t=表格-自定义
+#g=b4-table-special
+<table class="table table-${1:striped,sm,bordered,hover,inverse} ${2:table-inverse} ${3:table-responsive}">
+<thead class="${4:thead-inverse,thead-default}">
+	<tr>
+		<th>$5</th>
+		<th>$6</th>
+		<th>$7</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td scope="row">$8</td>
+		<td>$9</td>
+		<td>$10</td>
+	</tr>
+	<tr>
+		<td scope="row">$11</td>
+		<td>$12</td>
+		<td>$13</td>
+	</tr>$0
+</tbody>
+</table>
+#t=气泡提示-默认
+#g=b4-tooltip-default
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="${2:top,right,bottom,left}" title="$1">
+	${3:Button name}
+</button>$0
+#t=排版-引用
+#g=b4-typography-blockquote
+<blockquote class="blockquote">
+	<p class="mb-0">$1</p>
+	<footer class="blockquote-footer">$2 <cite title="${3:Source Title}">${3:Source Title}</cite></footer>
+</blockquote>$0
+#t=排版-描述列表-dl-dt-dd
+#g=b4-typography-description-list
+<dl class="row">
+	<dt class="col-sm-3">$1</dt>
+	<dd class="col-sm-9">$2</dd>
+	<dt class="col-sm-3">$3</dt>
+	<dd class="col-sm-9">$4</dd>
+	<dd class="col-sm-9 offset-sm-3">$5</dd>
+	<dt class="col-sm-3 text-truncate">$6</dt>
+	<dd class="col-sm-9">$7</dd>
+	<dt class="col-sm-3"></dt>
+	<dd class="col-sm-9">
+		<dl class="row">
+			<dt class="col-sm-4">${8:Nested title}</dt>
+			<dd class="col-sm-8">${9:Nested definition}</dd>
+		</dl>
+	</dd>
+</dl>$0
+#t=排版-标题
+#g=b4-typography-display-heading
+<h1 class="display-${1:1,2,3,4}">$2</h1>$0
+#t=排版-导读
+#g=b4-typography-lead
+<p class="lead">
+    $2
+</p>$0
+#t=排版-列表（同级并列）
+#g=b4-typography-list-inline
+<ul class="list-inline">
+	<li class="list-inline-item">$1</li>
+	<li class="list-inline-item">$2</li>
+	<li class="list-inline-item">$3</li>
+</ul>$0
+#t=排版-列表（去除样式）
+#g=b4-typography-list-unstyled
+<ul class="list-unstyled">
+	<li>$1</li>
+	<li>$2</li>
+	<li>$3</li>
+</ul>$0
+#t=排版-辅助文本
+#g=b4-typography-muted-text
+<small class="text-muted">$1</small>$0
